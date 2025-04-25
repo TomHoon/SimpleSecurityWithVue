@@ -17,8 +17,8 @@ export default {
   },
   methods: {
     async getAuthorizeCode(authCode) {
-      const redirectURL = "http://localhost:5173/member/kakao";
-      const key = "41d2a43168a7edd9f941329667a65ef4";
+      const redirectURL = "본인리다이렉트경로";
+      const key = "본인키";
       const access_token_url = `https://kauth.kakao.com/oauth/token`; // 토큰 발급 URL
 
       const header = {
@@ -40,7 +40,7 @@ export default {
 
       console.log(accessToken);
 
-      await axios.post("http://localhost:8087/api/kakao/token", {
+      await axios.post("백엔드경로", {
         accessToken,
       });
     },

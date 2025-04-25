@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <button @click="goToGetAuthCode">Test</button>
+      <button @click="goToGetAuthCode">카카오 로그인</button>
     </nav>
     <router-view />
   </div>
@@ -17,8 +17,8 @@ export default {
   methods: {
     goToGetAuthCode() {
       const kakao_auth_code_path = "https://kauth.kakao.com/oauth/authorize";
-      const redirectURL = "http://localhost:5173/member/kakao";
-      const key = "41d2a43168a7edd9f941329667a65ef4";
+      const redirectURL = "본인리다이렉트경로";
+      const key = "본인키";
 
       location.href = `${kakao_auth_code_path}?client_id=${key}&redirect_uri=${redirectURL}&response_type=code`;
     },
