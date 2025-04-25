@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <button @click="goToGetAuthCode">Test</button>
     </nav>
     <router-view />
   </div>
@@ -11,6 +10,19 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {};
+  },
+  mounted() {},
+  methods: {
+    goToGetAuthCode() {
+      const kakao_auth_code_path = "https://kauth.kakao.com/oauth/authorize";
+      const redirectURL = "http://localhost:5173/member/kakao";
+      const key = "41d2a43168a7edd9f941329667a65ef4";
+
+      location.href = `${kakao_auth_code_path}?client_id=${key}&redirect_uri=${redirectURL}&response_type=code`;
+    },
+  },
 };
 </script>
 
